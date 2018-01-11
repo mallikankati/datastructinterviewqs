@@ -29,11 +29,15 @@ public class ListNode {
 
 	public static void print(ListNode n) {
 		ListNode current = n;
-		while (current.next != null) {
+		while (current != null && current.next != null) {
 			System.out.print(current.val + " ");
 			current = current.next;
 		}
-		System.out.println(current.val);
+		if (current == null) {
+			System.out.print("{}");
+		} else {
+			System.out.println(current.val);
+		}
 	}
 
 	public static void main(String[] args) {
