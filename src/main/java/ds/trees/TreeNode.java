@@ -38,4 +38,8 @@ public class TreeNode {
 		}
 		return root;
 	}
+
+	public String toString() {
+		return "val :" + this.val;
+	}
 }
