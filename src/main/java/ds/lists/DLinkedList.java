@@ -44,6 +44,8 @@ public class DLinkedList {
 		DListNode temp = tail;
 		tail = (DListNode) tail.prev;
 		tail.next = null;
+		temp.next = null;
+		temp.prev = null;
 		return temp;
 	}
 

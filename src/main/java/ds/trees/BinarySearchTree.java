@@ -117,5 +117,7 @@ public class BinarySearchTree {
 		System.out.println(temp);
 		temp = bst.find(80);
 		System.out.println(temp);
+		bst.delete(17);
+		bst.print();
 	}
 }

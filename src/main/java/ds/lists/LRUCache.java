@@ -57,7 +57,7 @@ public class LRUCache {
 		cache.put("3", 3);
 		cache.put("4", 4);
 		cache.print();
-		cache.put("3", 5);
+		cache.put("3", 6);
 		cache.print();
 	}
 }
