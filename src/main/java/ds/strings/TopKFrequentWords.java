@@ -25,6 +25,7 @@ public class TopKFrequentWords {
 			temp.put(word, temp.getOrDefault(word, 0) + 1);
 		}
 		List<Map.Entry<String, Integer>> list = new ArrayList<>(temp.entrySet());
+		//Instead use maxheap to get O(logn) performance
 		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
 
 			@Override

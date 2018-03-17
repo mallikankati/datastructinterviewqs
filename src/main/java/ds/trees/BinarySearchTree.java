@@ -32,7 +32,7 @@ public class BinarySearchTree {
 	}
 
 	// remove the node from BST if exists
-	public boolean delete(int value) {
+	public boolean deleteNotEfficient(int value) {
 		TreeNode current = head;
 		TreeNode parent = null;
 		while (current != null) {
@@ -101,6 +101,46 @@ public class BinarySearchTree {
 		return false;
 	}
 
+	public TreeNode delete(int val) {
+		return delete(head, val);
+	}
+
+	private TreeNode delete(TreeNode node, int val) {
+		if (node == null) {
+			return null;
+		}
+		if (val < node.val) {
+			node.left = delete(node.left, val);
+		} else if (val > node.val) {
+			node.right = delete(node.right, val);
+		} else {
+			// case 1: no children
+			if (node.left == null && node.right == null) {
+				node = null;
+			} else if (node.left == null) {
+				// case 2: no left children
+				node = node.right;
+			} else if (node.right == null) {
+				// case 3: no right children
+				node = node.left;
+			} else {
+				// case 4: both children
+				// Find min in right child
+				TreeNode minNode = findMin(node.right);
+				node.val = minNode.val;
+				node.right = delete(node.right, minNode.val);
+			}
+		}
+		return node;
+	}
+
+	private TreeNode findMin(TreeNode node) {
+		while (node.left != null) {
+			node = node.left;
+		}
+		return node;
+	}
+
 	public void print() {
 		List<List<Integer>> list = Traversals.levelOrderTraversal(head);
 		System.out.println(list);
@@ -117,6 +157,7 @@ public class BinarySearchTree {
 		System.out.println(temp);
 		temp = bst.find(80);
 		System.out.println(temp);
+		//bst.deleteNotEfficient(17);
 		bst.delete(17);
 		bst.print();
 	}

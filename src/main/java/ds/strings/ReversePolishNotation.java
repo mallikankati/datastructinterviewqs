@@ -36,7 +36,7 @@ public class ReversePolishNotation {
 						s.push(v1 * v2);
 						break;
 					case '/':
-						s.push(v1 / v2);
+						s.push((double)(v1 / v2));
 						break;
 					default:
 						break;

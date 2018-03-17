@@ -23,6 +23,8 @@ public class GeneratePairParentheses {
 	}
 
 	public static void main(String[] args) {
+		logger.info(generateParenthesis(1) + "");
+		logger.info(generateParenthesis(2) + "");
 		logger.info(generateParenthesis(3) + "");
 		logger.info(generateParenthesis(4) + "");
 	}

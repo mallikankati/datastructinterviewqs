@@ -26,8 +26,6 @@ public class IntegerToEnglishWord {
 			if (val != 0) {
 				words = helper(num % 1000) + " " + NUM_1000S[i] + " "
 						+ words;
-			} else {
-				//sb.append(helper(num));
 			}
 			num /= 1000;
 			i++;

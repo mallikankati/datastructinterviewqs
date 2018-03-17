@@ -46,7 +46,6 @@ public class FirstMissingPositive {
 				+ firstMissingPositive(new int[] { 1, 2, 0 }));
 		System.out.println("[4, 3, -1, 1] : "
 				+ firstMissingPositive(new int[] { 4, 3, -1, 1 }));
-		System.out.println("[1] : "
-				+ firstMissingPositive(new int[] {1 }));
+		System.out.println("[1] : " + firstMissingPositive(new int[] { 1 }));
 	}
 }
